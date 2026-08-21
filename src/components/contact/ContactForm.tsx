@@ -1,0 +1,113 @@
+"use client";
+
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Send, CheckCircle2 } from "lucide-react";
+import { services } from "@/data/services";
+
+export default function ContactForm() {
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      setSubmitted(true);
+    }, 900);
+  };
+
+  if (submitted) {
+    return (
+      <div className="glass glow-border flex flex-col items-center justify-center rounded-2xl p-12 text-center">
+        <CheckCircle2 className="h-10 w-10 text-emerald" />
+        <h3 className="mt-4 font-display text-xl font-semibold">Message sent</h3>
+        <p className="mt-2 max-w-sm text-sm text-muted">
+          Thanks for reaching out — this is placeholder confirmation copy. Wire this form up to
+          your email service or form handler of choice before going live.
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="glass rounded-2xl p-6 md:p-8">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+        <div className="flex flex-col gap-2">
+          <label htmlFor="name" className="text-xs font-medium uppercase tracking-widest text-muted">
+            Name
+          </label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            required
+            placeholder="Your name"
+            className="rounded-lg border border-border bg-surface-2 px-4 py-3 text-sm outline-none transition-colors focus:border-electric/60"
+          />
+        </div>
+        <div className="flex flex-col gap-2">
+          <label htmlFor="email" className="text-xs font-medium uppercase tracking-widest text-muted">
+            Email
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            placeholder="you@email.com"
+            className="rounded-lg border border-border bg-surface-2 px-4 py-3 text-sm outline-none transition-colors focus:border-electric/60"
+          />
+        </div>
+      </div>
+
+      <div className="mt-5 flex flex-col gap-2">
+        <label htmlFor="service" className="text-xs font-medium uppercase tracking-widest text-muted">
+          Service Interested In
+        </label>
+        <select
+          id="service"
+          name="service"
+          defaultValue=""
+          className="rounded-lg border border-border bg-surface-2 px-4 py-3 text-sm outline-none transition-colors focus:border-electric/60"
+        >
+          <option value="" disabled>
+            Select a service
+          </option>
+          {services.map((s) => (
+            <option key={s.slug} value={s.slug}>
+              {s.title}
+            </option>
+          ))}
+          <option value="other">Something else</option>
+        </select>
+      </div>
+
+      <div className="mt-5 flex flex-col gap-2">
+        <label htmlFor="message" className="text-xs font-medium uppercase tracking-widest text-muted">
+          Project Details
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          required
+          rows={5}
+          placeholder="Tell me about your project, timeline, and goals..."
+          className="resize-none rounded-lg border border-border bg-surface-2 px-4 py-3 text-sm outline-none transition-colors focus:border-electric/60"
+        />
+      </div>
+
+      <motion.button
+        type="submit"
+        disabled={loading}
+        whileTap={{ scale: 0.98 }}
+        data-cursor-hover
+        className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-electric py-3.5 text-sm font-semibold text-white transition-all hover:shadow-[0_0_30px_-6px_var(--electric)] disabled:opacity-60"
+      >
+        {loading ? "Sending..." : "Send Message"}
+        {!loading && <Send className="h-4 w-4" />}
+      </motion.button>
+    </form>
+  );
+}
