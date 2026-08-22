@@ -1,4 +1,3 @@
-import { Check } from "lucide-react";
 import type { Service } from "@/data/services";
 import GlassCard from "@/components/shared/GlassCard";
 import Reveal from "@/components/shared/Reveal";
@@ -13,19 +12,9 @@ export default function ServiceCard({ service, index }: { service: Service; inde
         </div>
         <h3 className="mt-5 font-display text-xl font-semibold">{service.title}</h3>
         <p className="mt-1 text-sm font-medium text-emerald">{service.tagline}</p>
-        <p className="mt-4 text-sm leading-relaxed text-muted">{service.description}</p>
+        <p className="mt-4 flex-1 text-sm leading-relaxed text-muted">{service.description}</p>
 
-        <ul className="mt-5 space-y-2">
-          {service.deliverables.map((d) => (
-            <li key={d} className="flex items-start gap-2 text-sm text-foreground/80">
-              <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald" />
-              {d}
-            </li>
-          ))}
-        </ul>
-
-        <div className="mt-auto flex items-center justify-between border-t border-border pt-5 text-sm">
-          <span className="font-mono text-muted">{service.startingPrice}</span>
+        <div className="mt-6 border-t border-border pt-5 text-sm">
           <Button href="/contact" variant="ghost" className="px-0 py-0">
             Inquire →
           </Button>

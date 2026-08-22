@@ -11,7 +11,7 @@ export default function GlassCard({ children, className, glowColor = "electric" 
   return (
     <div
       className={cn(
-        "glass group relative overflow-hidden rounded-2xl p-6 transition-all duration-500",
+        "glass group relative overflow-hidden rounded-2xl p-6 backdrop-blur-[20px] backdrop-saturate-[1.4] transition-all duration-500",
         "hover:-translate-y-1 hover:shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)]",
         className
       )}

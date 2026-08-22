@@ -6,7 +6,7 @@ import WaveformDivider from "@/components/shared/WaveformDivider";
 export default function FinalCTA() {
   return (
     <section className="relative mx-auto max-w-5xl px-6 py-28 text-center md:px-10">
-      <div className="glass glow-border relative overflow-hidden rounded-[2rem] px-8 py-16 md:px-16">
+      <div className="glass glow-border relative overflow-hidden rounded-[2rem] px-8 py-16 backdrop-blur-[20px] backdrop-saturate-[1.4] md:px-16">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(51,194,255,0.12),_transparent_60%)]" />
         <Reveal className="relative z-10">
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-amber">Ready when you are</span>

@@ -69,13 +69,6 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   overflow-x: hidden;
-  cursor: none;
-}
-
-@media (pointer: coarse) {
-  body {
-    cursor: auto;
-  }
 }
 
 ::selection {
@@ -114,11 +107,52 @@ body {
   color: transparent;
 }
 
+/* backdrop-blur/saturate applied via Tailwind's backdrop-blur-[20px] backdrop-saturate-[1.4]
+   utility classes at each usage site, NOT as a plain backdrop-filter declaration here —
+   see the .navbar-glass comment below for why. */
 .glass {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015));
-  backdrop-filter: blur(20px) saturate(140%);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
   border: 1px solid var(--border);
+}
+
+/* Navbar frosted glass — Apple-style, two states (top-of-page vs scrolled)
+   toggled by a plain class so the browser's own CSS transition does the
+   interpolation. No JS drives the blur/opacity per frame.
+   The actual blur/saturate is applied via Tailwind's own backdrop-blur and
+   backdrop-saturate utility classes in the component, NOT as a plain
+   `backdrop-filter` declaration here — Tailwind v4 composes that property
+   sitewide from --tw-backdrop-* custom properties via a universal rule,
+   which silently wins over (and blanks out) a hand-written backdrop-filter
+   value declared outside that system. This class only owns the background/
+   shadow/transition, which aren't part of that composition and are safe to
+   set directly. @supports lightens the background once blur is actually
+   available; the un-gated background above is the solid fallback for
+   browsers without backdrop-filter support at all. */
+.navbar-glass {
+  background: rgba(6, 6, 8, 0.82);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 8px 30px -18px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+  .navbar-glass {
+    background: rgba(6, 6, 8, 0.32);
+  }
+}
+
+.navbar-glass--scrolled {
+  background: rgba(6, 6, 8, 0.9);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.09),
+    0 12px 40px -16px rgba(0, 0, 0, 0.6);
+}
+
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+  .navbar-glass--scrolled {
+    background: rgba(6, 6, 8, 0.55);
+  }
 }
 
 .glow-border {

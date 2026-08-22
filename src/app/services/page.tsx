@@ -3,18 +3,19 @@ import PageHero from "@/components/shared/PageHero";
 import ServiceCard from "@/components/services/ServiceCard";
 import FinalCTA from "@/components/home/FinalCTA";
 import { services } from "@/data/services";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Services",
   description:
-    "Recording, mixing, mastering, live sound, podcast production, TV production audio, and audio restoration services from Artemis Production.",
-};
+    "Recording, audio engineering, music production, mixing, mastering, television and broadcast audio, live multitrack recording, and commercial and branded audio — services from Artemis Production.",
+  path: "services",
+});
 
 export default function ServicesPage() {
   return (
     <>
       <PageHero
-        eyebrow="Services"
         title="Every stage of the signal chain, covered."
         description="From the first take to the final broadcast delivery — pick a single service or a full production pipeline."
       />

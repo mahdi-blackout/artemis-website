@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://www.artemisproduction.com/sitemap.xml",
+    sitemap: "https://mahdi-blackout.github.io/artemis-website/sitemap.xml",
   };
 }
