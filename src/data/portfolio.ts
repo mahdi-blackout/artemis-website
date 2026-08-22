@@ -1,144 +1,181 @@
 export type PortfolioCategory =
-  | "Mixing"
+  | "Music Production"
   | "Mastering"
-  | "Recording"
-  | "Live Sound"
-  | "TV";
+  | "Television"
+  | "Broadcast"
+  | "Commercial"
+  | "Branded Content";
+
+export type ProjectLink = {
+  label: string;
+  href: string;
+};
 
 export type PortfolioProject = {
   slug: string;
   title: string;
   client: string;
+  year?: string;
   category: PortfolioCategory;
   cover: string;
   description: string;
-  equipment: string[];
-  audioSrc?: string;
-  hasBeforeAfter: boolean;
+  role: string[];
+  links?: ProjectLink[];
 };
 
 export const portfolioCategories: PortfolioCategory[] = [
-  "Mixing",
+  "Music Production",
   "Mastering",
-  "Recording",
-  "Live Sound",
-  "TV",
+  "Television",
+  "Broadcast",
+  "Commercial",
+  "Branded Content",
 ];
 
 export const portfolioProjects: PortfolioProject[] = [
   {
-    slug: "midnight-echo-ep",
-    title: "Midnight Echo — EP",
-    client: "Hollow Static",
-    category: "Mixing",
-    cover: "/images/portfolio/mixing-1.svg",
-    description:
-      "Full mix for a five-track alt-rock EP, balancing dense guitar layers against a tight rhythm section for a live, room-driven sound.",
-    equipment: ["SSL Native Bundle", "Neve 1073 EQ", "1176 Compressor", "Pro Tools Ultimate"],
-    audioSrc: "/audio/placeholder-mix.mp3",
-    hasBeforeAfter: true,
-  },
-  {
-    slug: "iron-veil-single",
-    title: "Iron Veil — Single",
-    client: "Iron Veil",
-    category: "Mixing",
-    cover: "/images/portfolio/mixing-2.svg",
-    description:
-      "Aggressive metal mix with scooped, high-gain guitars and a punishing low end, built to hold up on festival PA systems.",
-    equipment: ["Kemper Profiler", "API 2500", "FabFilter Pro-Q3", "Slate Digital VMR"],
-    audioSrc: "/audio/placeholder-mix.mp3",
-    hasBeforeAfter: true,
-  },
-  {
-    slug: "restless-hearts-lp",
-    title: "Restless Hearts — LP",
-    client: "Restless Hearts",
-    category: "Mastering",
-    cover: "/images/portfolio/mastering-1.svg",
-    description:
-      "Full-length album master prepared for both vinyl cutting and streaming, with careful attention to sequencing and level consistency.",
-    equipment: ["Manley Massive Passive", "Weiss DS1-MK3", "Shadow Hills Mastering Compressor"],
-    audioSrc: "/audio/placeholder-mix.mp3",
-    hasBeforeAfter: true,
-  },
-  {
-    slug: "solstice-single-master",
-    title: "Solstice — Single Master",
-    client: "Nova Solstice",
-    category: "Mastering",
-    cover: "/images/portfolio/mastering-2.svg",
-    description:
-      "Streaming-optimized master for a synth-pop single, tuned to translate cleanly across club systems and mobile playback alike.",
-    equipment: ["Dangerous BAX EQ", "Elysia Alpha Compressor", "RME ADI-2 Pro"],
-    audioSrc: "/audio/placeholder-mix.mp3",
-    hasBeforeAfter: true,
-  },
-  {
-    slug: "session-tracking-fullband",
-    title: "Full Band Tracking Session",
-    client: "The Departures",
-    category: "Recording",
-    cover: "/images/portfolio/recording-1.svg",
-    description:
-      "Live-room tracking for a four-piece rock band, capturing drums, bass, and guitar simultaneously for a cohesive, human performance.",
-    equipment: ["Neumann U87", "SM7B", "API 512c Preamps", "Pro Tools HDX"],
-    hasBeforeAfter: false,
-  },
-  {
-    slug: "vocal-session-rnb",
-    title: "R&B Vocal Session",
-    client: "Simone Rae",
-    category: "Recording",
-    cover: "/images/portfolio/recording-2.svg",
-    description:
-      "Intimate vocal tracking session focused on performance comfort and mic technique to capture a warm, present lead vocal.",
-    equipment: ["Sony C800G", "Neve 1073", "Distressor", "Apollo x8"],
-    hasBeforeAfter: false,
-  },
-  {
-    slug: "festival-foh-2025",
-    title: "Riverbend Festival — FOH",
-    client: "Riverbend Music Festival",
-    category: "Live Sound",
-    cover: "/images/portfolio/live-1.svg",
-    description:
-      "Front-of-house mixing across a three-day festival main stage, managing rapid changeovers between six touring acts.",
-    equipment: ["DiGiCo SD12", "d&b audiotechnik J-Series", "Shure Axient Digital"],
-    hasBeforeAfter: false,
-  },
-  {
-    slug: "arena-monitor-world",
-    title: "Arena Tour — Monitor World",
-    client: "Crimson Tide (Tour)",
-    category: "Live Sound",
-    cover: "/images/portfolio/live-2.svg",
-    description:
-      "IEM and wedge monitor mixing for a 20-date arena tour, maintaining a consistent in-ear mix across every venue.",
-    equipment: ["Avid S6L", "Shure PSM1000", "Sennheiser IEMs"],
-    hasBeforeAfter: false,
-  },
-  {
-    slug: "drama-series-mix",
-    title: "\"Ashfall\" — Episode Re-Recording Mix",
-    client: "Northlight Studios",
-    category: "TV",
+    slug: "the-cage-season-2",
+    title: "The Cage — Season 2",
+    client: "The Cage",
+    year: "2026",
+    category: "Television",
     cover: "/images/portfolio/tv-1.svg",
     description:
-      "5.1 re-recording mix for a broadcast drama series, balancing dialogue, ADR, foley, and score to network delivery specs.",
-    equipment: ["Avid S6", "Dolby Atmos Renderer", "iZotope RX 11"],
-    audioSrc: "/audio/placeholder-mix.mp3",
-    hasBeforeAfter: true,
+      "Mustakim's largest production to date — a multi-city production involving 18 participating bands, with full audio production for the show's competition and final rounds.",
+    role: [
+      "Location Recording",
+      "Audio Engineering",
+      "Multi-Band Production",
+      "Technical Coordination",
+      "Final-Round Audio Production",
+    ],
   },
   {
-    slug: "documentary-audio-post",
-    title: "Deep Current — Documentary Audio Post",
-    client: "Tidewater Films",
-    category: "TV",
+    slug: "yamaha-music-bangladesh",
+    title: "Yamaha Music Bangladesh",
+    client: "Yamaha Music Bangladesh",
+    year: "2022–2025",
+    category: "Commercial",
+    cover: "/images/portfolio/recording-1.svg",
+    description:
+      "A multi-year commercial partnership producing more than 50 episodes of Feature Friday and contributing to more than 20 additional music and media projects — 70+ episodes and projects in total.",
+    role: ["Audio Engineer", "Producer", "Audio Production"],
+  },
+  {
+    slug: "what-a-show-channel-i",
+    title: "What a Show",
+    client: "Channel i",
+    year: "2023–Present",
+    category: "Television",
     cover: "/images/portfolio/tv-2.svg",
     description:
-      "Full audio post for a feature documentary — dialogue edit, restoration of archival field recordings, and final broadcast mix.",
-    equipment: ["iZotope RX 11", "Pro Tools Ultimate", "Dolby LM100 Loudness Meter"],
-    hasBeforeAfter: true,
+      "Ongoing audio production and engineering for Channel i's entertainment program, contributing from Season 5 onward.",
+    role: ["Audio Production", "Audio Engineering"],
+    links: [
+      { label: "Watch: Eid Special, Season 5", href: "https://www.youtube.com/watch?v=qzpFkp9xlVY" },
+      {
+        label: "Watch: Tawsif Mahbub & Sarika Sabah",
+        href: "https://www.youtube.com/watch?v=7gAmaloMlo0",
+      },
+    ],
+  },
+  {
+    slug: "oni-hasan",
+    title: "Oni Hasan — Artist Production",
+    client: "Oni Hasan",
+    category: "Music Production",
+    cover: "/images/portfolio/mixing-1.svg",
+    description:
+      "Ongoing collaboration with guitarist Oni Hasan — known for brand associations including Kiesel and Seymour Duncan. Working with technically demanding musicians requires more than clean recordings; it requires understanding the instrument, the performance, and the artist's sonic identity.",
+    role: ["Producer", "Audio Engineer", "Mixing Engineer", "Mastering Engineer"],
+  },
+  {
+    slug: "infidel-swallow-this",
+    title: "Infidel — Swallow This",
+    client: "Infidel",
+    year: "2018",
+    category: "Music Production",
+    cover: "/images/portfolio/mixing-2.svg",
+    description:
+      "An early production milestone where Mustakim's musical background and engineering work came together — songwriting, production, mixing, and mastering, produced at Sonic Station Productions. Guitars re-amped by Keith Merrow.",
+    role: ["Songwriting", "Production", "Mixing", "Mastering"],
+    links: [{ label: "Listen on Bandcamp", href: "https://infideltheband.bandcamp.com/track/swallow-this" }],
+  },
+  {
+    slug: "infidel-end-of-disgrace",
+    title: "Infidel — End of Disgrace",
+    client: "Infidel",
+    year: "2017",
+    category: "Music Production",
+    cover: "/images/portfolio/recording-2.svg",
+    description:
+      "An early Infidel release from the year Mustakim began developing his mixing and production skills through his own band.",
+    role: ["Musician", "Songwriter", "Producer", "Audio Engineer"],
+  },
+  {
+    slug: "netra-news-election-coverage",
+    title: "Election Coverage",
+    client: "Netra News",
+    year: "2026",
+    category: "Broadcast",
+    cover: "/images/portfolio/live-1.svg",
+    description:
+      "Broadcast audio production for Netra News's election coverage — news and field production audio outside a conventional studio or entertainment environment.",
+    role: ["Audio Production", "Broadcast Audio", "Audio Engineering"],
+  },
+  {
+    slug: "voice-of-ummah",
+    title: "Voice of Ummah",
+    client: "Deepto TV",
+    year: "2025",
+    category: "Television",
+    cover: "/images/portfolio/live-2.svg",
+    description: "Audio production and engineering for Voice of Ummah, a television entertainment program on Deepto TV.",
+    role: ["Audio Production", "Audio Engineering"],
+  },
+  {
+    slug: "bkash-skip-the-line",
+    title: "bKash Presents Skip the Line",
+    client: "bKash",
+    year: "2026",
+    category: "Commercial",
+    cover: "/images/portfolio/mastering-2.svg",
+    description: "Commercial and branded entertainment production for bKash Presents Skip the Line.",
+    role: ["Audio Production", "Audio Engineering"],
+  },
+  {
+    slug: "free-fire-9th-anniversary",
+    title: "Free Fire 9th Anniversary",
+    client: "Free Fire",
+    year: "2026",
+    category: "Branded Content",
+    cover: "/images/portfolio/mastering-1.svg",
+    description: "Branded gaming and entertainment production for the Free Fire 9th Anniversary.",
+    role: ["Audio Production"],
+  },
+  {
+    slug: "torture-goregrinder",
+    title: "In the Slam / On the Gang",
+    client: "Torture Goregrinder",
+    year: "2025",
+    category: "Mastering",
+    cover: "/images/portfolio/recording-2.svg",
+    description:
+      "Mastering engineer credit on Torture Goregrinder's release, publicly documented via music metadata — The Metal Archives also lists mixing involvement.",
+    role: ["Mastering", "Mixing"],
+    links: [
+      { label: "View on Shazam", href: "https://www.shazam.com/song/1804238089/in-the-slam-on-the-gang" },
+    ],
+  },
+  {
+    slug: "ak-rahul-fried-chicken",
+    title: "Fried Chicken",
+    client: "A.K. Rahul",
+    category: "Music Production",
+    cover: "/images/portfolio/mixing-1.svg",
+    description:
+      "A publicly indexed track credited to A.K. Rahul and Raiyan Dio Sarwar as songwriters, with Mustakim Al Mahdi also credited as a songwriter.",
+    role: ["Songwriting"],
+    links: [{ label: "View on Shazam", href: "https://www.shazam.com/song/1756184723/fried-chicken" }],
   },
 ];

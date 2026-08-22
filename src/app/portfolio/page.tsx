@@ -2,18 +2,19 @@ import type { Metadata } from "next";
 import PageHero from "@/components/shared/PageHero";
 import PortfolioGrid from "@/components/portfolio/PortfolioGrid";
 import FinalCTA from "@/components/home/FinalCTA";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Portfolio",
   description:
-    "Explore recording, mixing, mastering, live sound, and TV production audio projects by Artemis Production.",
-};
+    "Music production, television, broadcast, commercial, and branded audio projects by Mustakim Al Mahdi / Artemis Production — including The Cage Season 2, Yamaha Music Bangladesh, and Channel i's What a Show.",
+  path: "portfolio",
+});
 
 export default function PortfolioPage() {
   return (
     <>
       <PageHero
-        eyebrow="Portfolio"
         title="Work that's been heard on stages, screens, and stereos."
         description="A selection of recent projects across mixing, mastering, recording, live sound, and broadcast television."
       />

@@ -1,8 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, Phone, MessageCircle, Camera, Video, Music2 } from "lucide-react";
+import { Mail, MessageCircle } from "lucide-react";
 import { navLinks } from "@/data/nav";
 import WaveformDivider from "@/components/shared/WaveformDivider";
+import ObfuscatedLink from "@/components/shared/ObfuscatedLink";
+import { EMAIL_ENCODED, WHATSAPP_ENCODED, formatWhatsApp } from "@/lib/contact";
 
 export default function Footer() {
   return (
@@ -20,22 +22,10 @@ export default function Footer() {
             />
           </Link>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
-            Recording, mixing, mastering, live sound, and broadcast audio — engineered
-            for artists and productions that refuse to sound ordinary.
+            Mustakim Al Mahdi — Audio Engineer &amp; Music Producer based in Bangladesh, working
+            across music production, recording, mixing, mastering, television, broadcast, and
+            large-scale entertainment productions.
           </p>
-          <div className="mt-6 flex gap-3">
-            {[Camera, Video, Music2].map((Icon, i) => (
-              <a
-                key={i}
-                href="#"
-                data-cursor-hover
-                aria-label="Social link"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted transition-colors hover:border-electric/50 hover:text-electric"
-              >
-                <Icon className="h-4 w-4" />
-              </a>
-            ))}
-          </div>
         </div>
 
         <div>
@@ -59,20 +49,31 @@ export default function Footer() {
           </h3>
           <ul className="mt-4 space-y-3 text-sm text-muted">
             <li className="flex items-center gap-2">
-              <Mail className="h-4 w-4 text-emerald" /> hello@artemisproduction.com
+              <Mail className="h-4 w-4 text-emerald" />
+              <ObfuscatedLink
+                encoded={EMAIL_ENCODED}
+                hrefPrefix="mailto:"
+                className="transition-colors hover:text-electric"
+              >
+                {(raw) => raw}
+              </ObfuscatedLink>
             </li>
             <li className="flex items-center gap-2">
-              <Phone className="h-4 w-4 text-emerald" /> +1 (555) 019-2044
-            </li>
-            <li className="flex items-center gap-2">
-              <MessageCircle className="h-4 w-4 text-emerald" /> WhatsApp available
+              <MessageCircle className="h-4 w-4 text-emerald" />
+              <ObfuscatedLink
+                encoded={WHATSAPP_ENCODED}
+                hrefPrefix="https://wa.me/"
+                className="transition-colors hover:text-electric"
+              >
+                {formatWhatsApp}
+              </ObfuscatedLink>
             </li>
           </ul>
         </div>
       </div>
 
       <div className="border-t border-border px-6 py-6 text-center text-xs text-muted md:px-10">
-        © {new Date().getFullYear()} Artemis Production. All rights reserved. Site design & build placeholder content.
+        © {new Date().getFullYear()} Artemis Production. All rights reserved.
       </div>
     </footer>
   );

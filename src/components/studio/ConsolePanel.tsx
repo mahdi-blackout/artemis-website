@@ -14,7 +14,7 @@ export default function ConsolePanel() {
         className="mx-auto"
       />
       <Reveal delay={0.15}>
-        <div className="glass glow-border mt-14 flex flex-wrap items-end justify-center gap-10 rounded-3xl p-10 md:gap-14 md:p-14">
+        <div className="glass glow-border mt-14 flex flex-wrap items-end justify-center gap-10 rounded-3xl p-10 backdrop-blur-[20px] backdrop-saturate-[1.4] md:gap-14 md:p-14">
           <Knob label="LOW" defaultValue={62} color="electric" />
           <Knob label="MID" defaultValue={48} color="emerald" />
           <Knob label="HIGH" defaultValue={70} color="amber" />

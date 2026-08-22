@@ -1,8 +1,16 @@
-import { MapPin } from "lucide-react";
+import { MapPin, ExternalLink } from "lucide-react";
+
+const MAPS_URL = "https://maps.app.goo.gl/4JnAXGRZsq1MqasR7";
 
 export default function StudioMap() {
   return (
-    <div className="glass relative aspect-[4/3] w-full overflow-hidden rounded-2xl sm:aspect-video">
+    <a
+      href={MAPS_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      data-cursor-hover
+      className="glass group relative block aspect-[4/3] w-full overflow-hidden rounded-2xl backdrop-blur-[20px] backdrop-saturate-[1.4] transition-colors hover:border-electric/40 sm:aspect-video"
+    >
       <svg
         className="absolute inset-0 h-full w-full opacity-40"
         viewBox="0 0 400 300"
@@ -27,10 +35,12 @@ export default function StudioMap() {
           </span>
         </div>
         <p className="mt-4 font-mono text-xs uppercase tracking-widest text-muted">
-          Studio Location — Placeholder Map
+          Based in Bangladesh
         </p>
-        <p className="mt-1 text-sm text-foreground/70">123 Waveform Ave, Los Angeles, CA</p>
+        <p className="mt-1 flex items-center gap-1.5 text-sm text-foreground/70 transition-colors group-hover:text-electric">
+          View on Google Maps <ExternalLink className="h-3.5 w-3.5" />
+        </p>
       </div>
-    </div>
+    </a>
   );
 }

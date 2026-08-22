@@ -1,42 +1,56 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Disc3, Tv, Guitar, Waves } from "lucide-react";
+import { Guitar, Waves, Tv, Newspaper, Disc3, Briefcase } from "lucide-react";
 import PageHero from "@/components/shared/PageHero";
 import SectionHeading from "@/components/shared/SectionHeading";
 import Reveal from "@/components/shared/Reveal";
 import GlassCard from "@/components/shared/GlassCard";
 import FinalCTA from "@/components/home/FinalCTA";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "About",
   description:
-    "Meet the audio engineer behind Artemis Production — biography, experience across music and television, and a philosophy built on sound quality.",
-};
+    "Mustakim Al Mahdi is a Bangladesh-based Audio Engineer and Music Producer — from Infidel in 2017 to Yamaha Music Bangladesh, television, broadcast, and The Cage Season 2.",
+  path: "about",
+});
 
 const milestones = [
   {
+    icon: Guitar,
+    title: "Infidel",
+    period: "2017",
+    body: "Began developing mixing and production skills through his own band — a Bangladesh-based Groove Metal / Metalcore project, with releases including End of Disgrace and Swallow This.",
+  },
+  {
     icon: Waves,
-    title: "Audio Engineering",
-    period: "9+ years",
-    body: "Trained on analog consoles before moving into modern ITB workflows — recording, editing, mixing, and mastering for independent and major-affiliated artists across genres.",
+    title: "Yamaha Music Bangladesh",
+    period: "2022–2025",
+    body: "50+ episodes of Feature Friday and 20+ additional music and media projects — a major commercial production chapter.",
   },
   {
     icon: Tv,
-    title: "Television Production Audio",
-    period: "4 seasons, 3 networks",
-    body: "Production sound, ADR, and broadcast re-recording mixes for scripted drama and documentary series, delivered to network loudness and format specifications.",
+    title: "What a Show — Channel i",
+    period: "2023–Present",
+    body: "Audio production and engineering for Channel i's entertainment program, from Season 5 onward.",
   },
   {
-    icon: Guitar,
-    title: "Rock & Metal Production",
-    period: "40+ releases",
-    body: "A specialist ear for high-gain guitar tones, aggressive low end, and dynamic drum production — without sacrificing clarity or translation.",
+    icon: Newspaper,
+    title: "Broadcast & News",
+    period: "2025–2026",
+    body: "Voice of Ummah (Deepto TV) and Netra News's election coverage — extending into broadcast entertainment and field news production.",
   },
   {
     icon: Disc3,
-    title: "Mastering & Delivery",
-    period: "Streaming to vinyl",
-    body: "Format-aware mastering that respects the destination — whether that's a playlist algorithm, a cutting lathe, or a broadcast compliance meter.",
+    title: "The Cage — Season 2",
+    period: "2026",
+    body: "The largest production to date — multi-city recording and audio production for 18 participating bands and the show's final rounds.",
+  },
+  {
+    icon: Briefcase,
+    title: "Commercial & Branded",
+    period: "2026",
+    body: "bKash Presents Skip the Line and the Free Fire 9th Anniversary — commercial and branded entertainment production.",
   },
 ];
 
@@ -44,9 +58,8 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="About"
-        title="The engineer behind the board."
-        description="Nine years of chasing the sound that makes a track undeniable."
+        title="Musician turned audio engineer."
+        description="From the studio to television and large-scale productions — engineering audio that serves the performance."
       />
 
       <section className="mx-auto max-w-7xl px-6 pb-28 md:px-10">
@@ -55,7 +68,7 @@ export default function AboutPage() {
             <div className="glass glow-border relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl">
               <Image
                 src="/images/about/portrait.svg"
-                alt="Portrait of the Artemis Production audio engineer"
+                alt="Portrait illustration of Mustakim Al Mahdi, Artemis Production"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 className="object-cover"
@@ -68,39 +81,44 @@ export default function AboutPage() {
             <Reveal>
               <span className="font-mono text-xs uppercase tracking-[0.25em] text-emerald">Biography</span>
               <h2 className="mt-3 font-display text-2xl font-semibold sm:text-3xl">
-                Built in the room, refined behind the glass.
+                Mustakim Al Mahdi — Artemis Production
               </h2>
               <div className="mt-5 space-y-4 text-base leading-relaxed text-muted">
                 <p>
-                  I&apos;m the engineer and producer behind Artemis Production — a studio built
-                  around one belief: a recording should feel exactly as powerful played back as it
-                  did the moment it happened in the room.
+                  I&apos;m Mustakim Al Mahdi, the audio engineer and music producer behind Artemis
+                  Production — based in Bangladesh, working across music production, recording,
+                  mixing, mastering, television, broadcast, and large-scale entertainment
+                  productions.
                 </p>
                 <p>
-                  Over the past nine years I&apos;ve worked across genres and formats, from
-                  tracking full bands live to the floor, to mixing arena-ready metal records, to
-                  delivering broadcast-compliant re-recording mixes for network television. What
-                  ties it together is the same obsessive attention to detail, whether the audience
-                  is a festival crowd or a living room television.
+                  I began in 2017 by mixing my own band, Infidel, which grew into the starting
+                  point of my engineering career. From 2022 to 2025, I worked with Yamaha Music
+                  Bangladesh, producing more than 50 episodes of Feature Friday and contributing
+                  to more than 20 additional projects.
                 </p>
                 <p>
-                  I&apos;ve spent time on both sides of the console — as a touring live engineer
-                  and as a studio-based mixer/masterer — which means I understand not just how a
-                  mix should sound in a treated room, but how it needs to hold up everywhere else.
+                  Since 2023, I&apos;ve worked on Channel i&apos;s What a Show from Season 5
+                  onward, alongside productions for Deepto TV, Netra News, bKash, Free Fire, and
+                  other entertainment projects. In 2026, I worked on The Cage Season 2 — my
+                  largest project to date, involving multi-city recording and audio production
+                  for 18 participating bands and the show&apos;s final rounds.
+                </p>
+                <p>
+                  Alongside broadcast and commercial work, I continue to produce, engineer, mix,
+                  and master music for artists and bands including Oni Hasan, A.K. Rahul, Torture
+                  Goregrinder, Timescape, Cremain, Fallen Ash, and Infidel.
                 </p>
               </div>
             </Reveal>
 
             <Reveal delay={0.1}>
               <div className="glass rounded-2xl p-6">
-                <span className="font-mono text-xs uppercase tracking-[0.25em] text-amber">
-                  Philosophy
-                </span>
+                <span className="font-mono text-xs uppercase tracking-[0.25em] text-amber">Approach</span>
                 <p className="mt-3 text-lg leading-relaxed text-foreground/90">
-                  &ldquo;Sound quality isn&apos;t about chasing perfect numbers on a meter — it&apos;s
-                  about protecting the emotion of the performance through every stage of the
-                  process. If a decision doesn&apos;t serve the song, it doesn&apos;t belong in the
-                  mix.&rdquo;
+                  I started by mixing my own band, which means I understand performance from both
+                  sides of the console. That perspective carries into every session — combining
+                  the instincts of a musician with the technical discipline of an engineer, with
+                  particular focus on rock, metal, and performance-driven productions.
                 </p>
               </div>
             </Reveal>
@@ -110,13 +128,13 @@ export default function AboutPage() {
 
       <section className="mx-auto max-w-7xl px-6 pb-28 md:px-10">
         <SectionHeading
-          eyebrow="Track Record"
-          title="Experience across music, television, and live production."
+          eyebrow="Career Timeline"
+          title="From Infidel to television, broadcast, and large-scale productions."
         />
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2">
+        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {milestones.map((m, i) => (
-            <Reveal key={m.title} delay={i * 0.08}>
-              <GlassCard glowColor={i % 2 === 0 ? "electric" : "emerald"} className="h-full">
+            <Reveal key={m.title} delay={i * 0.06}>
+              <GlassCard glowColor={i % 3 === 0 ? "electric" : i % 3 === 1 ? "emerald" : "amber"} className="h-full">
                 <m.icon className="h-6 w-6 text-electric" />
                 <h3 className="mt-4 font-display text-lg font-semibold">{m.title}</h3>
                 <p className="mt-1 text-xs font-mono uppercase tracking-widest text-muted">
