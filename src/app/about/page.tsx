@@ -67,8 +67,8 @@ export default function AboutPage() {
           <Reveal className="lg:sticky lg:top-32">
             <div className="glass glow-border relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl">
               <Image
-                src="/images/about/portrait.svg"
-                alt="Portrait illustration of Mustakim Al Mahdi, Artemis Production"
+                src="/images/about/mustakim-portrait.png"
+                alt="Mustakim Al Mahdi playing guitar, Artemis Production"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 className="object-cover"
