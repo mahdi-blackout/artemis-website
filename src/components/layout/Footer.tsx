@@ -2,14 +2,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { Mail, MessageCircle } from "lucide-react";
 import { navLinks } from "@/data/nav";
-import WaveformDivider from "@/components/shared/WaveformDivider";
 import ObfuscatedLink from "@/components/shared/ObfuscatedLink";
 import { EMAIL_ENCODED, WHATSAPP_ENCODED, formatWhatsApp } from "@/lib/contact";
 
 export default function Footer() {
   return (
     <footer className="relative mt-32 border-t border-border bg-surface/60">
-      <WaveformDivider className="absolute -top-5 left-0" />
       <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-4 md:px-10">
         <div className="md:col-span-2">
           <Link href="/" className="relative block h-11 w-[220px]">

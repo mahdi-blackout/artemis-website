@@ -38,7 +38,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="max-w-4xl font-display text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl"
+          className="max-w-4xl font-display text-4xl font-semibold leading-[1.05] tracking-[-0.02em] sm:text-5xl md:text-6xl"
         >
           From the studio to large-scale productions —{" "}
           <span className="text-gradient">engineering audio that serves the performance</span>
@@ -64,7 +64,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.7 }}
           className="mt-16 max-w-2xl border-t border-border pt-8"
         >
-          <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted">
+          <span className="font-mono text-xs uppercase tracking-[0.15em] text-muted">
             Worked With
           </span>
           <div className="mt-5">

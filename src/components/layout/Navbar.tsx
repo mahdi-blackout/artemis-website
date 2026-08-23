@@ -33,7 +33,7 @@ function NavLinkItem({ href, label, active }: { href: string; label: string; act
           <motion.span
             layoutId="nav-active-pill"
             className="absolute inset-0 -z-10 rounded-full bg-white/10 ring-1 ring-white/10"
-            transition={{ type: "spring", stiffness: 500, damping: 35 }}
+            transition={{ type: "spring", stiffness: 400, damping: 42 }}
           />
         )}
         {label}
@@ -78,8 +78,10 @@ export default function Navbar() {
 
       <div
         className={cn(
-          "relative navbar-glass backdrop-saturate-[1.6]",
-          scrolled ? "navbar-glass--scrolled backdrop-blur-xl backdrop-saturate-[1.9]" : "backdrop-blur-lg"
+          "relative navbar-glass",
+          scrolled
+            ? "navbar-glass--scrolled backdrop-blur-[20px] backdrop-saturate-[1.9]"
+            : "backdrop-blur-[0px] backdrop-saturate-[1]"
         )}
       >
         <div className="relative z-10">
@@ -92,11 +94,6 @@ export default function Navbar() {
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               className="relative col-start-2 mx-auto"
             >
-              <motion.div
-                className="pointer-events-none absolute left-1/2 top-1/2 h-24 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-electric/40 blur-[50px]"
-                animate={{ opacity: [0.3, 0.55, 0.3] }}
-                transition={{ duration: 2.6, repeat: Infinity, ease: "easeInOut" }}
-              />
               <Link
                 href="/"
                 data-cursor-hover
