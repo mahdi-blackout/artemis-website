@@ -6,8 +6,8 @@ export default function FeaturedWork() {
   return (
     <section className="relative mx-auto max-w-7xl px-6 py-28 md:px-10">
       <Reveal>
-        <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.25em] text-emerald">
-          <span className="h-1.5 w-1.5 rounded-full bg-emerald shadow-[0_0_8px_var(--emerald)]" />
+        <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.15em] text-muted">
+          <span className="h-1.5 w-1.5 rounded-full bg-emerald" />
           Selected Work
         </span>
       </Reveal>

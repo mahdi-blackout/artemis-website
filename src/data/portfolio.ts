@@ -17,7 +17,9 @@ export type PortfolioProject = {
   client: string;
   year?: string;
   category: PortfolioCategory;
-  cover: string;
+  cover?: string;
+  coverPosition?: string;
+  video?: string;
   description: string;
   role: string[];
   links?: ProjectLink[];
@@ -34,12 +36,23 @@ export const portfolioCategories: PortfolioCategory[] = [
 
 export const portfolioProjects: PortfolioProject[] = [
   {
+    slug: "ak-rahul-fried-chicken",
+    title: "Fried Chicken",
+    client: "A.K. Rahul",
+    category: "Music Production",
+    video: "https://www.youtube.com/watch?v=NCkuW3LF1xE",
+    description:
+      "A publicly indexed track credited to A.K. Rahul and Raiyan Dio Sarwar as songwriters, with Mustakim Al Mahdi also credited as a songwriter.",
+    role: ["Songwriting"],
+    links: [{ label: "View on Shazam", href: "https://www.shazam.com/song/1756184723/fried-chicken" }],
+  },
+  {
     slug: "the-cage-season-2",
     title: "The Cage — Season 2",
     client: "The Cage",
     year: "2026",
     category: "Television",
-    cover: "/images/portfolio/tv-1.svg",
+    cover: "/images/portfolio/the-cage-season-2.jpg",
     description:
       "Mustakim's largest production to date — a multi-city production involving 18 participating bands, with full audio production for the show's competition and final rounds.",
     role: [
@@ -56,7 +69,7 @@ export const portfolioProjects: PortfolioProject[] = [
     client: "Yamaha Music Bangladesh",
     year: "2022–2025",
     category: "Commercial",
-    cover: "/images/portfolio/recording-1.svg",
+    video: "https://www.facebook.com/yamaha.music.bangladesh/videos/514390497814181/",
     description:
       "A multi-year commercial partnership producing more than 50 episodes of Feature Friday and contributing to more than 20 additional music and media projects — 70+ episodes and projects in total.",
     role: ["Audio Engineer", "Producer", "Audio Production"],
@@ -67,7 +80,7 @@ export const portfolioProjects: PortfolioProject[] = [
     client: "Channel i",
     year: "2023–Present",
     category: "Television",
-    cover: "/images/portfolio/tv-2.svg",
+    video: "https://www.youtube.com/watch?v=BlsyaCLqy_E",
     description:
       "Ongoing audio production and engineering for Channel i's entertainment program, contributing from Season 5 onward.",
     role: ["Audio Production", "Audio Engineering"],
@@ -84,7 +97,8 @@ export const portfolioProjects: PortfolioProject[] = [
     title: "Oni Hasan — Artist Production",
     client: "Oni Hasan",
     category: "Music Production",
-    cover: "/images/portfolio/mixing-1.svg",
+    cover: "/images/portfolio/oni-hasan.png",
+    coverPosition: "center 15%",
     description:
       "Ongoing collaboration with guitarist Oni Hasan — known for brand associations including Kiesel and Seymour Duncan. Working with technically demanding musicians requires more than clean recordings; it requires understanding the instrument, the performance, and the artist's sonic identity.",
     role: ["Producer", "Audio Engineer", "Mixing Engineer", "Mastering Engineer"],
@@ -95,22 +109,11 @@ export const portfolioProjects: PortfolioProject[] = [
     client: "Infidel",
     year: "2018",
     category: "Music Production",
-    cover: "/images/portfolio/mixing-2.svg",
+    video: "https://www.youtube.com/watch?v=HOokY_uHlmg",
     description:
       "An early production milestone where Mustakim's musical background and engineering work came together — songwriting, production, mixing, and mastering, produced at Sonic Station Productions. Guitars re-amped by Keith Merrow.",
     role: ["Songwriting", "Production", "Mixing", "Mastering"],
     links: [{ label: "Listen on Bandcamp", href: "https://infideltheband.bandcamp.com/track/swallow-this" }],
-  },
-  {
-    slug: "infidel-end-of-disgrace",
-    title: "Infidel — End of Disgrace",
-    client: "Infidel",
-    year: "2017",
-    category: "Music Production",
-    cover: "/images/portfolio/recording-2.svg",
-    description:
-      "An early Infidel release from the year Mustakim began developing his mixing and production skills through his own band.",
-    role: ["Musician", "Songwriter", "Producer", "Audio Engineer"],
   },
   {
     slug: "netra-news-election-coverage",
@@ -118,7 +121,7 @@ export const portfolioProjects: PortfolioProject[] = [
     client: "Netra News",
     year: "2026",
     category: "Broadcast",
-    cover: "/images/portfolio/live-1.svg",
+    cover: "/images/portfolio/netra-news-election.png",
     description:
       "Broadcast audio production for Netra News's election coverage — news and field production audio outside a conventional studio or entertainment environment.",
     role: ["Audio Production", "Broadcast Audio", "Audio Engineering"],
@@ -129,7 +132,7 @@ export const portfolioProjects: PortfolioProject[] = [
     client: "Deepto TV",
     year: "2025",
     category: "Television",
-    cover: "/images/portfolio/live-2.svg",
+    video: "https://www.youtube.com/watch?v=yrrmo9wKVe4",
     description: "Audio production and engineering for Voice of Ummah, a television entertainment program on Deepto TV.",
     role: ["Audio Production", "Audio Engineering"],
   },
@@ -139,7 +142,7 @@ export const portfolioProjects: PortfolioProject[] = [
     client: "bKash",
     year: "2026",
     category: "Commercial",
-    cover: "/images/portfolio/mastering-2.svg",
+    cover: "/images/portfolio/bkash-skip-the-line.jpg",
     description: "Commercial and branded entertainment production for bKash Presents Skip the Line.",
     role: ["Audio Production", "Audio Engineering"],
   },
@@ -149,7 +152,7 @@ export const portfolioProjects: PortfolioProject[] = [
     client: "Free Fire",
     year: "2026",
     category: "Branded Content",
-    cover: "/images/portfolio/mastering-1.svg",
+    cover: "/images/portfolio/free-fire-9th-anniversary.webp",
     description: "Branded gaming and entertainment production for the Free Fire 9th Anniversary.",
     role: ["Audio Production"],
   },
@@ -159,23 +162,12 @@ export const portfolioProjects: PortfolioProject[] = [
     client: "Torture Goregrinder",
     year: "2025",
     category: "Mastering",
-    cover: "/images/portfolio/recording-2.svg",
+    video: "https://youtu.be/wBhtXG2bOwE?si=2vxgkgPbeutriAMR",
     description:
       "Mastering engineer credit on Torture Goregrinder's release, publicly documented via music metadata — The Metal Archives also lists mixing involvement.",
     role: ["Mastering", "Mixing"],
     links: [
       { label: "View on Shazam", href: "https://www.shazam.com/song/1804238089/in-the-slam-on-the-gang" },
     ],
-  },
-  {
-    slug: "ak-rahul-fried-chicken",
-    title: "Fried Chicken",
-    client: "A.K. Rahul",
-    category: "Music Production",
-    cover: "/images/portfolio/mixing-1.svg",
-    description:
-      "A publicly indexed track credited to A.K. Rahul and Raiyan Dio Sarwar as songwriters, with Mustakim Al Mahdi also credited as a songwriter.",
-    role: ["Songwriting"],
-    links: [{ label: "View on Shazam", href: "https://www.shazam.com/song/1756184723/fried-chicken" }],
   },
 ];

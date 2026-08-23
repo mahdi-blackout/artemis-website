@@ -79,8 +79,11 @@ export default function AboutPage() {
 
           <div className="space-y-8">
             <Reveal>
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-emerald">Biography</span>
-              <h2 className="mt-3 font-display text-2xl font-semibold sm:text-3xl">
+              <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.15em] text-muted">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald" />
+                Biography
+              </span>
+              <h2 className="mt-3 font-display text-2xl font-semibold tracking-[-0.01em] sm:text-3xl">
                 Mustakim Al Mahdi — Artemis Production
               </h2>
               <div className="mt-5 space-y-4 text-base leading-relaxed text-muted">
@@ -113,7 +116,10 @@ export default function AboutPage() {
 
             <Reveal delay={0.1}>
               <div className="glass rounded-2xl p-6">
-                <span className="font-mono text-xs uppercase tracking-[0.25em] text-amber">Approach</span>
+                <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.15em] text-muted">
+                  <span className="h-1.5 w-1.5 rounded-full bg-amber" />
+                  Approach
+                </span>
                 <p className="mt-3 text-lg leading-relaxed text-foreground/90">
                   I started by mixing my own band, which means I understand performance from both
                   sides of the console. That perspective carries into every session — combining

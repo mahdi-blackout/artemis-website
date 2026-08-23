@@ -16,12 +16,12 @@ export default function Button({ href, children, variant = "primary", className,
       href={href}
       data-cursor-hover
       className={cn(
-        "group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300",
+        "group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300 ease-out",
         variant === "primary" &&
-          "bg-electric text-white shadow-[0_0_30px_-8px_var(--electric)] hover:shadow-[0_0_40px_-4px_var(--electric)] hover:scale-[1.03]",
+          "bg-electric text-white hover:brightness-110 active:brightness-95",
         variant === "secondary" &&
-          "glass text-foreground backdrop-blur-[20px] backdrop-saturate-[1.4] hover:border-emerald/50 hover:text-emerald",
-        variant === "ghost" && "text-foreground/80 hover:text-electric",
+          "glass text-foreground backdrop-blur-[20px] backdrop-saturate-[1.4] hover:border-foreground/25",
+        variant === "ghost" && "text-foreground/80 hover:text-foreground",
         className
       )}
     >

@@ -1,16 +1,15 @@
 import { ArrowRight } from "lucide-react";
 import Button from "@/components/shared/Button";
 import Reveal from "@/components/shared/Reveal";
-import WaveformDivider from "@/components/shared/WaveformDivider";
 
 export default function FinalCTA() {
   return (
     <section className="relative mx-auto max-w-5xl px-6 py-28 text-center md:px-10">
       <div className="glass glow-border relative overflow-hidden rounded-[2rem] px-8 py-16 backdrop-blur-[20px] backdrop-saturate-[1.4] md:px-16">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(51,194,255,0.12),_transparent_60%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(120,0,255,0.10),_transparent_60%)]" />
         <Reveal className="relative z-10">
-          <span className="font-mono text-xs uppercase tracking-[0.3em] text-amber">Ready when you are</span>
-          <h2 className="mx-auto mt-4 max-w-2xl font-display text-3xl font-semibold leading-tight tracking-tight sm:text-4xl md:text-5xl">
+          <span className="font-mono text-xs uppercase tracking-[0.15em] text-muted">Ready when you are</span>
+          <h2 className="mx-auto mt-4 max-w-2xl font-display text-3xl font-semibold leading-[1.1] tracking-[-0.02em] sm:text-4xl md:text-5xl">
             Let&apos;s make your next release sound like it belongs on the big stage.
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-muted">
@@ -27,7 +26,6 @@ export default function FinalCTA() {
           </div>
         </Reveal>
       </div>
-      <WaveformDivider className="mt-12" />
     </section>
   );
 }

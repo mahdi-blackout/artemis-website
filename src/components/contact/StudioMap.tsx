@@ -29,8 +29,8 @@ export default function StudioMap() {
 
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <div className="relative flex h-14 w-14 items-center justify-center">
-          <span className="absolute h-full w-full animate-ping rounded-full bg-electric/30" />
-          <span className="relative flex h-10 w-10 items-center justify-center rounded-full bg-electric text-white shadow-[0_0_30px_var(--electric)]">
+          <span className="absolute h-full w-full animate-ping rounded-full bg-electric/20" />
+          <span className="relative flex h-10 w-10 items-center justify-center rounded-full bg-electric text-white">
             <MapPin className="h-5 w-5" />
           </span>
         </div>

@@ -137,7 +137,7 @@ export default function ContactForm() {
         disabled={status === "loading"}
         whileTap={{ scale: 0.98 }}
         data-cursor-hover
-        className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-electric py-3.5 text-sm font-semibold text-white transition-all hover:shadow-[0_0_30px_-6px_var(--electric)] disabled:opacity-60"
+        className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-electric py-3.5 text-sm font-semibold text-white transition-all hover:brightness-110 disabled:opacity-60"
       >
         {status === "loading" ? "Sending..." : "Send Message"}
         {status !== "loading" && <Send className="h-4 w-4" />}

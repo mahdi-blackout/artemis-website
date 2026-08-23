@@ -41,7 +41,7 @@ export default function MouseGlow() {
         width: 560,
         height: 560,
         background:
-          "radial-gradient(circle, rgba(51,194,255,0.10) 0%, rgba(47,230,168,0.05) 40%, transparent 70%)",
+          "radial-gradient(circle, rgba(225,235,255,0.12) 0%, rgba(180,200,235,0.06) 40%, transparent 70%)",
         borderRadius: "50%",
       }}
       aria-hidden="true"
