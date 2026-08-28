@@ -72,12 +72,6 @@ export default function Hero() {
           </div>
         </motion.div>
       </motion.div>
-
-      <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 animate-float-slow">
-        <div className="flex h-10 w-6 items-start justify-center rounded-full border border-border p-1.5">
-          <span className="h-1.5 w-1 rounded-full bg-electric" />
-        </div>
-      </div>
     </section>
   );
 }
