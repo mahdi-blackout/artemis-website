@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import SiteChrome from "@/components/layout/SiteChrome";
 import { SITE_URL, absoluteUrl, absoluteAssetUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
 import "./globals.css";
@@ -101,6 +102,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to content
         </a>
         <SiteChrome>{children}</SiteChrome>
+        <SpeedInsights />
       </body>
     </html>
   );
